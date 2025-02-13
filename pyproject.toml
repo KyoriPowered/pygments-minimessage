@@ -39,7 +39,7 @@ poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
 [tool.poetry-dynamic-versioning]
 enable = true
 bump = true
-dirty = true
+metadata = false
 
 [[tool.poetry.source]]
 name = "kyori"
