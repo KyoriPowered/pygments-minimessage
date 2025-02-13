@@ -3,6 +3,9 @@
 __pycache__/
 dist/
 
+# sphinx
+/docs/_build
+
 # OS dust
 
 .DS_Store

@@ -27,11 +27,23 @@ issues = "https://github.com/KyoriPowered/pygments-minimessage/issues"
 changelog = "https://github.com/KyoriPowered/pygments-minimessage/releases"
 
 [tool.poetry]
+dependencies.python = ">=3.12,<4.0"
 version = "0.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.9.4"
 pre-commit = "^4.1.0"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^8.1.3"
+furo = "^2024.8.6"
+sphinx-design = "^0.6.1"
+myst-parser = "^4.0.1"
+sphinx-autobuild = "^2024.10.3"
+sphinx-github-changelog = "^1.4.0"
 
 [tool.poetry.requires-plugins]
 poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }

@@ -29,12 +29,11 @@ __all__ = ["MiniMessageLexer"]
 
 
 class MiniMessageLexer(RegexLexer):
-  """
-  A basic implementation of something resembling the MiniMessage language.
+  """A basic implementation of something resembling the MiniMessage language.
 
-  The behavior when encountering invalid tags differs greatly from the real
-  MiniMessage parser, but it's good enough for now for the examples
-  in the documentation.
+  The behavior when encountering invalid tags differs greatly from the real MiniMessage
+  parser, but it's good enough for now for the examples in the documentation.
+
   """
 
   name: ClassVar[str] = "MiniMessage component representation"

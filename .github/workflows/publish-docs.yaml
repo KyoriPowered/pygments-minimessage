@@ -1,0 +1,49 @@
+name: "publish / docs"
+
+on:
+  push:
+    tags-ignore: [ "**" ]
+    branches: [ "**" ]
+  pull_request:
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.event.number || github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    outputs:
+      branch_match: "${{ steps.setup.outputs.publishing_branch }}"
+    steps:
+      - name: "setup"
+        id: "setup"
+        uses: "KyoriPowered/.github/.github/actions/setup-python-env@trunk"
+        with:
+          activate_venv: true
+      - name: "setup / install deps"
+        run: "poetry install --with=docs"
+      - uses: "ammaraskar/sphinx-problem-matcher@master"
+      - name: "build"
+        working-directory: "docs/"
+        env:
+          SPHINX_GITHUB_CHANGELOG_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: "make dirhtml"
+      - name: "publish / upload artifact"
+        uses: "actions/upload-pages-artifact@v3.0.1"
+        with:
+          path: "docs/_build/dirhtml/"
+  deploy:
+    runs-on: "ubuntu-latest"
+    needs: "build"
+    if: "${{ github.event_name == 'push' && needs.build.outputs.branch_match != '' }}"
+    permissions:
+      pages: "write"
+      id-token: "write"
+    environment:
+      name: "github-pages"
+      url: "${{ steps.deployment.outputs.page_url }}"
+    steps:
+      - name: "deploy / pages"
+        id: "deployment"
+        uses: "actions/deploy-pages@v4.0.5"
