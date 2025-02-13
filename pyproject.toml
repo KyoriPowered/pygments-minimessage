@@ -22,6 +22,7 @@ dynamic = ["version"]
 minimessage = "pygments_minimessage:MiniMessageLexer"
 
 [project.urls]
+homepage = "https://pygments-minimessage.kyori.net/"
 repository = "https://github.com/KyoriPowered/pygments-minimessage"
 issues = "https://github.com/KyoriPowered/pygments-minimessage/issues"
 changelog = "https://github.com/KyoriPowered/pygments-minimessage/releases"
@@ -57,7 +58,6 @@ dirty = true
 name = "kyori"
 url = "https://repo.kyori.net/repository/pip-internal/simple"
 priority = "primary"
-
 
 [tool.ruff]
 line-length = 120
