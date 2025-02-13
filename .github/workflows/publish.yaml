@@ -37,6 +37,8 @@ jobs:
     needs: "build"
     permissions:
       id-token: "write"
+      attestations: "write"
+      contents: "write"
     environment:
       name: "pypi"
       url: "https://pypi.org/p/pygments-minimessage"
