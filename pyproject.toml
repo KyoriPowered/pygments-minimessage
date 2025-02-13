@@ -1,0 +1,63 @@
+[project]
+name = "pygments-minimessage"
+description = "A Pygments highlighter for the MiniMessage language"
+authors = [
+  { name = "zml", email = "zml@kyori.net" }
+]
+license = "MIT"
+license-files = [ "license.txt" ]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "pygments (>=2.19.1,<3.0.0)"
+]
+keywords = [ "pygments", "lexer", "highlighting", "adventure" ]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Plugins",
+]
+dynamic = ["version"]
+
+[project.entry-points."pygments.lexers"]
+minimessage = "pygments_minimessage:MiniMessageLexer"
+
+[project.urls]
+repository = "https://github.com/KyoriPowered/pygments-minimessage"
+issues = "https://github.com/KyoriPowered/pygments-minimessage/issues"
+changelog = "https://github.com/KyoriPowered/pygments-minimessage/releases"
+
+[tool.poetry]
+version = "0.0.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.4"
+pre-commit = "^4.1.0"
+
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
+
+[tool.poetry-dynamic-versioning]
+enable = true
+bump = true
+dirty = true
+
+[[tool.poetry.source]]
+name = "kyori"
+url = "https://repo.kyori.net/repository/pip-internal/simple"
+priority = "primary"
+
+
+[tool.ruff]
+line-length = 120
+indent-width = 2
+
+[tool.ruff.lint]
+select = [ "ASYNC", "E", "F", "I", "RUF" ]
+ignore = [ "E501" ]
+
+[tool.mdformat]
+end_of_line = "keep"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"

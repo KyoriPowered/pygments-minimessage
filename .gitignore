@@ -1,0 +1,9 @@
+# python
+*.pyc
+__pycache__/
+dist/
+
+# OS dust
+
+.DS_Store
+Thumbs.db
