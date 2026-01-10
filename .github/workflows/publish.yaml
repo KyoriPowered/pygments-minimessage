@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: "setup"
         id: "setup"
-        uses: "KyoriPowered/.github/.github/actions/setup-python-env@trunk"
+        uses: "KyoriPowered/ci-cookbook/actions/setup-python-env@2025.12.18"
       - name: "setup / install deps"
         run: "poetry install"
       - name: "build wheel"

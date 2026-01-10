@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "setup"
-        uses: "KyoriPowered/.github/.github/actions/setup-python-env@trunk"
+        uses: "KyoriPowered/ci-cookbook/actions/setup-python-env@2025.12.18"
       - name: "setup / install reviewdog"
         uses: "reviewdog/action-setup@v1.3.0"
         with:
