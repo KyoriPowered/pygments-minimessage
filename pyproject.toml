@@ -54,11 +54,6 @@ enable = true
 bump = true
 dirty = true
 
-[[tool.poetry.source]]
-name = "kyori"
-url = "https://repo.kyori.net/repository/pip-internal/simple"
-priority = "primary"
-
 [tool.ruff]
 line-length = 120
 indent-width = 2
