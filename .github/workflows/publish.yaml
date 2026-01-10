@@ -21,13 +21,13 @@ jobs:
     steps:
       - name: "setup"
         id: "setup"
-        uses: "KyoriPowered/ci-cookbook/actions/setup-python-env@2025.12.18"
+        uses: "KyoriPowered/ci-cookbook/actions/setup-python-env@ce1dea3f90f8e361ed19afb2c914ab0fdcf42fef" # 2025.12.18
       - name: "setup / install deps"
         run: "poetry install"
       - name: "build wheel"
         run: "poetry build"
       - name: "upload artifact"
-        uses: "actions/upload-artifact@v4.6.0"
+        uses: "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02" # v4.6.2
         with:
           name: "python-package-distributions"
           path: "dist/"
@@ -44,14 +44,14 @@ jobs:
       url: "https://pypi.org/p/pygments-minimessage"
     steps:
       - name: "download artifact"
-        uses: "actions/download-artifact@v4.1.8"
+        uses: "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093" # v4.3.0
         with:
           name: "python-package-distributions"
           path: "dist/"
       - name: "publish / pypi"
-        uses: "pypa/gh-action-pypi-publish@v1.12.4"
+        uses: "pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e" # v1.13.0
       - name: "publish / release"
-        uses: "softprops/action-gh-release@v2.2.1"
+        uses: "softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b" # v2.5.0
         with:
           files: |
             dist/**
@@ -66,12 +66,12 @@ jobs:
       url: "https://test.pypi.org/p/pygments-minimessage"
     steps:
       - name: "download artifact"
-        uses: "actions/download-artifact@v4.1.8"
+        uses: "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093" # v4.3.0
         with:
           name: "python-package-distributions"
           path: "dist/"
       - name: "publish / testpypi"
-        uses: "pypa/gh-action-pypi-publish@v1.12.4"
+        uses: "pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e" # v1.13.0
         with:
           repository-url: "https://test.pypi.org/legacy/"
           verbose: true
