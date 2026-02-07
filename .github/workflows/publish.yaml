@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: "setup"
         id: "setup"
-        uses: "KyoriPowered/ci-cookbook/actions/setup-python-env@5f3b529fd5d1fe99cd40b52eec128a01607850fb" # 2026.01.11
+        uses: "KyoriPowered/ci-cookbook/actions/setup-python-env@f3b9a3fbb31e9f4320d855e7be17b028522e87be" # 2026.02.07
       - name: "setup / install deps"
         run: "poetry install"
       - name: "build wheel"
