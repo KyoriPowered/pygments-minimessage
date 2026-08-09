@@ -25,7 +25,7 @@ jobs:
           activate_venv: true
       - name: "setup / install deps"
         run: "poetry install --with=docs"
-      - uses: "ammaraskar/sphinx-problem-matcher@master"
+      - uses: "ammaraskar/sphinx-problem-matcher@1f74d6599f4a5e89a20d3c99aab4e6a70f7bda0f" # master
       - name: "build"
         working-directory: "docs/"
         env:
