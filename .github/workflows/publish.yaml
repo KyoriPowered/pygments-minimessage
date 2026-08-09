@@ -49,9 +49,9 @@ jobs:
           name: "python-package-distributions"
           path: "dist/"
       - name: "publish / pypi"
-        uses: "pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e" # v1.13.0
+        uses: "pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33" # v1.14.2
       - name: "publish / release"
-        uses: "softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b" # v2.5.0
+        uses: "softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65" # v2.6.2
         with:
           files: |
             dist/**
@@ -71,7 +71,7 @@ jobs:
           name: "python-package-distributions"
           path: "dist/"
       - name: "publish / testpypi"
-        uses: "pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e" # v1.13.0
+        uses: "pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33" # v1.14.2
         with:
           repository-url: "https://test.pypi.org/legacy/"
           verbose: true
