@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "setup"
-        uses: "KyoriPowered/.github/.github/actions/setup-python-env@trunk"
+        uses: "KyoriPowered/.github/.github/actions/setup-python-env@7b79b090212a9c8e371b71c23f5e7b097d125997" # trunk
       - name: "setup / install reviewdog"
         uses: "reviewdog/action-setup@d8a7baabd7f3e8544ee4dbde3ee41d0011c3a93f" # v1.5.0
         with:
@@ -54,7 +54,7 @@ jobs:
       - name: "setup / install deps"
         id: "install"
         run: "poetry install"
-      - uses: "actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306" # v5.0.3
+      - uses: "actions/cache@caa296126883cff596d87d8935842f9db880ef25" # v5.1.0
         with:
           path: "~/.cache/pre-commit"
           key: "pre-commit-3|${{ hashFiles('.pre-commit-config.yaml') }}"
